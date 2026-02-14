@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameHub - Free Game Downloads</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0f0f0f;
+    color: white;
+}
+
+header {
+    background: #1a1a1a;
+    padding: 20px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.search-box {
+    text-align: center;
+    padding: 15px;
+}
+
+.search-box input {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+}
+
+.categories {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.categories button {
+    margin: 5px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    background: #00ff88;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.categories button:hover {
+    background: #00cc6a;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: #1c1c1c;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.download-btn {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #00ff88;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    background: #00cc6a;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #1a1a1a;
+    margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>🎮 GameHub - Free Game Downloads</header>
+
+<div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search games..." onkeyup="searchGames()">
+</div>
+
+<div class="categories">
+    <button onclick="filterCategory('all')">All</button>
+    <button onclick="filterCategory('android')">Android</button>
+    <button onclick="filterCategory('pc')">PC</button>
+</div>
+
+<div class="container" id="gameContainer">
+
+<div class="card" data-category="android">
+    <img src="https://via.placeholder.com/300x200">
+    <h3>Speed Racer</h3>
+    <p>Exciting Android racing game.</p>
+    <a href="#"><button class="download-btn">Download</button></a>
+</div>
+
+<div class="card" data-category="pc">
+    <img src="https://via.placeholder.com/300x200">
+    <h3>Battle Arena</h3>
+    <p>PC action fighting game.</p>
+    <a href="#"><button class="download-btn">Download</button></a>
+</div>
+
+<div class="card" data-category="android">
+    <img src="https://via.placeholder.com/300x200">
+    <h3>Puzzle Master</h3>
+    <p>Fun brain challenge game.</p>
+    <a href="#"><button class="download-btn">Download</button></a>
+</div>
+
+</div>
+
+<footer>
+© 2026 GameHub | Built by You 🚀
+</footer>
+
+<script>
+function searchGames() {
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let cards = document.getElementsByClassName("card");
+
+    for (let i = 0; i < cards.length; i++) {
+        let title = cards[i].getElementsByTagName("h3")[0];
+        if (title.innerHTML.toLowerCase().indexOf(input) > -1) {
+            cards[i].style.display = "";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+}
+
+function filterCategory(category) {
+    let cards = document.getElementsByClassName("card");
+
+    for (let i = 0; i < cards.length; i++) {
+        if (category === "all") {
+            cards[i].style.display = "";
+        } else if (cards[i].getAttribute("data-category") === category) {
+            cards[i].style.display = "";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameHub - Free Game Downloads</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0f0f0f;
+    color: white;
+}
+
+header {
+    background: #1a1a1a;
+    padding: 20px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.search-box {
+    text-align: center;
+    padding: 15px;
+}
+
+.search-box input {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+}
+
+.categories {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.categories button {
+    margin: 5px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    background: #00ff88;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.categories button:hover {
+    background: #00cc6a;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: #1c1c1c;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.download-btn {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #00ff88;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    background: #00cc6a;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #1a1a1a;
+    margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>🎮 GameHub - Free Game Downloads</header>
+
+<div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search games..." onkeyup="searchGames()">
+</div>
+
+<div class="categories">
+    <button onclick="filterCategory('all')">All</button>
+    <button onclick="filterCategory('android')">Android</button>
+    <button onclick="filterCategory('pc')">PC</button>
+</div>
+
+<div class="container" id="gameContainer">
+
+<div class="card" data-category="android">
+    <img src="https://via.placeholder.com/300x200">
+    <h3>Speed Racer</h3>
+    <p>Exciting Android racing game.</p>
+    <a href="#"><button class="download-btn">Download</button></a>
+</div>
+
+<div class="card" data-category="pc">
+    <img src="https://via.placeholder.com/300x200">
+    <h3>Battle Arena</h3>
+    <p>PC action fighting game.</p>
+    <a href="#"><button class="download-btn">Download</button></a>
+</div>
+
+<div class="card" data-category="android">
+    <img src="https://via.placeholder.com/300x200">
+    <h3>Puzzle Master</h3>
+    <p>Fun brain challenge game.</p>
+    <a href="#"><button class="download-btn">Download</button></a>
+</div>
+
+</div>
+<div class="container" id="gameContainer">
+
+<div class="card" data-category="android">
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/4f/Subway_Surfers_App_Icon.png">
+    <h3>Subway Surfers</h3>
+    <p>Endless runner arcade game. Dodge trains and collect coins.</p>
+    <a href="https://play.google.com/store/apps/details?id=com.kiloo.subwaysurf" target="_blank">
+        <button class="download-btn">Download from Play Store</button>
+    </a>
+</div>
+
+<div class="card" data-category="android">
+    <img src="https://upload.wikimedia.org/wikipedia/en/5/5e/Call_of_Duty_Mobile.jpg">
+    <h3>Call of Duty: Mobile</h3>
+    <p>Action-packed multiplayer shooting game.</p>
+    <a href="https://play.google.com/store/apps/details?id=com.activision.callofduty.shooter" target="_blank">
+        <button class="download-btn">Download from Play Store</button>
+    </a>
+</div>
+
+<div class="card" data-category="android">
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/97/Dream_League_Soccer_2023.png">
+    <h3>Dream League Soccer</h3>
+    <p>Build your team and compete in football matches.</p>
+    <a href="https://play.google.com/store/apps/details?id=com.firsttouchgames.dls7" target="_blank">
+        <button class="download-btn">Download from Play Store</button>
+    </a>
+</div>
+
+<div class="card" data-category="android">
+    <img src="https://upload.wikimedia.org/wikipedia/en/0/0f/Candy_Crush_Saga_Logo.png">
+    <h3>Candy Crush Saga</h3>
+    <p>Popular puzzle match-3 game.</p>
+    <a href="https://play.google.com/store/apps/details?id=com.king.candycrushsaga" target="_blank">
+        <button class="download-btn">Download from Play Store</button>
+    </a>
+</div>
+<div class="card" data-category="android">
+<img src="https://via.placeholder.com/300x200">
+<h3>Free Fire</h3>
+<p>Battle royale survival shooter game.</p>
+<a href="https://play.google.com/store/apps/details?id=com.dts.freefireth" target="_blank">
+<button class="download-btn">Download from Play Store</button>
+</a>
+</div>
+
+<div class="card" data-category="android">
+<img src="https://via.placeholder.com/300x200">
+<h3>PUBG Mobile</h3>
+<p>Intense multiplayer battle royale action.</p>
+<a href="https://play.google.com/store/apps/details?id=com.tencent.ig" target="_blank">
+<button class="download-btn">Download from Play Store</button>
+</a>
+</div>
+
+<div class="card" data-category="android">
+<img src="https://via.placeholder.com/300x200">
+<h3>Asphalt 9</h3>
+<p>High-speed arcade racing experience.</p>
+<a href="https://play.google.com/store/apps/details?id=com.gameloft.android.ANMP.GloftA9HM" target="_blank">
+<button class="download-btn">Download from Play Store</button>
+</a>
+</div>
+
+<div class="card" data-category="android">
+<img src="https://via.placeholder.com/300x200">
+<h3>8 Ball Pool</h3>
+<p>Play online pool matches worldwide.</p>
+<a href="https://play.google.com/store/apps/details?id=com.miniclip.eightballpool" target="_blank">
+<button class="download-btn">Download from Play Store</button>
+</a>
+</div>
+
+<div class="card" data-category="android">
+<img src="https://via.placeholder.com/300x200">
+<h3>Temple Run 2</h3>
+<p>Endless running adventure game.</p>
+<a href="https://play.google.com/store/apps/details?id=com.imangi.templerun2" target="_blank">
+<button class="download-btn">Download from Play Store</button>
+</a>
+</div>
+
+<div class="card" data-category="android">
+<img src="https://via.placeholder.com/300x200">
+<h3>Minecraft</h3>
+<p>Build and explore infinite worlds.</p>
+<a href="https://play.google.com/store/apps/details?id=com.mojang.minecraftpe" target="_blank">
+<button class="download-btn">Download from Play Store</button>
+</a>
+</div>
+
+<div class="card" data-category="android">
+<img src="https://via.placeholder.com/300x200">
+<h3>FIFA Mobile</h3>
+<p>Build your ultimate football team.</p>
+<a href="https://play.google.com/store/apps/details?id=com.ea.gp.fifamobile" target="_blank">
+<button class="download-btn">Download from Play Store</button>
+</a>
+</div>
+
+<div class="card" data-category="android">
+<img src="https://via.placeholder.com/300x200">
+<h3>Among Us</h3>
+<p>Multiplayer social deduction game.</p>
+<a href="https://play.google.com/store/apps/details?id=com.innersloth.spacemafia" target="_blank">
+<button class="download-btn">Download from Play Store</button>
+</a>
+</div>
+
+<div class="card" data-category="android">
+<img src="https://via.placeholder.com/300x200">
+<h3>Clash Royale</h3>
+<p>Real-time strategy battle game.</p>
+<a href="https://play.google.com/store/apps/details?id=com.supercell.clashroyale" target="_blank">
+<button class="download-btn">Download from Play Store</button>
+</a>
+</div>
+
+<div class="card" data-category="android">
+<img src="https://via.placeholder.com/300x200">
+<h3>Brawl Stars</h3>
+<p>Fast-paced multiplayer battle game.</p>
+<a href="https://play.google.com/store/apps/details?id=com.supercell.brawlstars" target="_blank">
+<button class="download-btn">Download from Play Store</button>
+</a>
+</div>
+
+<div class="card" data-category="android">
+<img src="https://via.placeholder.com/300x200">
+<h3>Hill Climb Racing</h3>
+<p>Fun physics-based driving game.</p>
+<a href="https://play.google.com/store/apps/details?id=com.fingersoft.hillclimb" target="_blank">
+<button class="download-btn">Download from Play Store</button>
+</a>
+</div>
+
+<div class="card" data-category="android">
+<img src="https://via.placeholder.com/300x200">
+<h3>Shadow Fight 2</h3>
+<p>Action-packed martial arts fighting game.</p>
+<a href="https://play.google.com/store/apps/details?id=com.nekki.shadowfight" target="_blank">
+<button class="download-btn">Download from Play Store</button>
+</a>
+</div>
+
+<div class="card" data-category="android">
+<img src="https://via.placeholder.com/300x200">
+<h3>Real Racing 3</h3>
+<p>Realistic racing simulation experience.</p>
+<a href="https://play.google.com/store/apps/details?id=com.ea.games.r3_row" target="_blank">
+<button class="download-btn">Download from Play Store</button>
+</a>
+</div>
+
+<div class="card" data-category="android">
+<img src="https://via.placeholder.com/300x200">
+<h3>Gardenscapes</h3>
+<p>Match-3 puzzle with garden renovation.</p>
+<a href="https://play.google.com/store/apps/details?id=com.playrix.gardenscapes" target="_blank">
+<button class="download-btn">Download from Play Store</button>
+</a>
+</div>
+
+<div class="card" data-category="android">
+<img src="https://via.placeholder.com/300x200">
+<h3>Ludo King</h3>
+<p>Classic board game with friends.</p>
+<a href="https://play.google.com/store/apps/details?id=com.ludo.king" target="_blank">
+<button class="download-btn">Download from Play Store</button>
+</a>
+</div>
+
+<div class="card" data-category="android">
+<img src="https://via.placeholder.com/300x200">
+<h3>Angry Birds 2</h3>
+<p>Classic slingshot puzzle adventure.</p>
+<a href="https://play.google.com/store/apps/details?id=com.rovio.baba" target="_blank">
+<button class="download-btn">Download from Play Store</button>
+</a>
+</div>
+
+<div class="card" data-category="android">
+<img src="https://via.placeholder.com/300x200">
+<h3>Roblox</h3>
+<p>Create and play millions of games.</p>
+<a href="https://play.google.com/store/apps/details?id=com.roblox.client" target="_blank">
+<button class="download-btn">Download from Play Store</button>
+</a>
+</div>
+
+<div class="card" data-category="android">
+<img src="https://via.placeholder.com/300x200">
+<h3>Subway Princess Runner</h3>
+<p>Fun endless runner game.</p>
+<a href="https://play.google.com/store/apps/details?id=com.rioo.runnersubway" target="_blank">
+<button class="download-btn">Download from Play Store</button>
+</a>
+</div>
+
+<div class="card" data-category="android">
+<img src="https://via.placeholder.com/300x200">
+<h3>Mobile Legends</h3>
+<p>5v5 MOBA competitive action game.</p>
+<a href="https://play.google.com/store/apps/details?id=com.mobile.legends" target="_blank">
+<button class="download-btn">Download from Play Store</button>
+</a>
+</div>
+
+<div class="card" data-category="android">
+<img src="https://via.placeholder.com/300x200">
+<h3>Need for Speed No Limits</h3>
+<p>Street racing and car customization.</p>
+<a href="https://play.google.com/store/apps/details?id=com.ea.game.nfs14_row" target="_blank">
+<button class="download-btn">Download from Play Store</button>
+</a>
+</div>
+<div class="card" data-category="android">
+    <img src="https://upload.wikimedia.org/wikipedia/en/1/1e/Clash_of_Clans_Logo.png">
+    <h3>Clash of Clans</h3>
+    <p>Strategy game. Build your village and battle players worldwide.</p>
+    <a href="https://play.google.com/store/apps/details?id=com.supercell.clashofclans" target="_blank">
+        <button class="download-btn">Download from Play Store</button>
+    </a>
+</div>
+
+</div>
+<footer>
+© 2026 GameHub | Built by You 🚀
+</footer>
+
+<script>
+function searchGames() {
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let cards = document.getElementsByClassName("card");
+
+    for (let i = 0; i < cards.length; i++) {
+        let title = cards[i].getElementsByTagName("h3")[0];
+        if (title.innerHTML.toLowerCase().indexOf(input) > -1) {
+            cards[i].style.display = "";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+}
+
+function filterCategory(category) {
+    let cards = document.getElementsByClassName("card");
+
+    for (let i = 0; i < cards.length; i++) {
+        if (category === "all") {
+            cards[i].style.display = "";
+        } else if (cards[i].getAttribute("data-category") === category) {
+            cards[i].style.display = "";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+</body>
+</html>
+
